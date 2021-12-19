@@ -248,7 +248,7 @@ contract TIENDAVAULT is Context {
             
     
     function buy(uint256 amount) public {
-        require((amount * rate *9950/10000)/ceros <= t<lm.balanceOf(address(this)), "TIENDA: no hay tantos TLM a la venta");
+        require((amount * rate *9950/10000)/ceros <= tlm.balanceOf(address(this)), "TIENDA: no hay tantos TLM a la venta");
         
         
         if (tlmWithOutBacking >0){
