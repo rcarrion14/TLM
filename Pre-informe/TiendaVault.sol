@@ -254,8 +254,8 @@ contract TIENDAVAULT is Context {
         if (tlmWithOutBacking >0){
             if(amount * rate /ceros*9950/10000 <= tlmWithOutBacking){
 				backingCoin.transferFrom(msg.sender, address(this), amount);
-                tlmWithOutBacking = tlmWithOutBacking - amount * rate *9950/10000;
-                tlmWithBacking = tlmWithBacking + amount * rate *9950/10000;                
+                tlmWithOutBacking = tlmWithOutBacking - amount * rate / ceros *9950/10000;
+                tlmWithBacking = tlmWithBacking + amount * rate / ceros *9950/10000;                
             }
             
             else{
