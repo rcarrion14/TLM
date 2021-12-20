@@ -98,7 +98,8 @@ contract TIENDAVAULT is Context {
 
     function backingWithdraw(uint256 amount) public {  // cliente le da TLM, devuelve bBTC
     
-        require(tlm.balanceOf(msg.sender)>= amount, "Cliente no tiene suficiente TLM");
+        require(tlm.balanceOf(msg.sender)>= amount, "Cliente no tiene suficiente TLM");  
+	require(backingCoin.balanceOf(address(this)) >= amount * ceros / rate, "Vault no tiene suficiente bBTC");
         
         tlmWithBacking = tlmWithBacking - amount;
         tlmWithOutBacking = tlmWithOutBacking + amount;
